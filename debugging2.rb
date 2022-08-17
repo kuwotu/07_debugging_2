@@ -10,15 +10,14 @@ class LetterCounter
       @text.chars.each do |char|
         next unless is_letter?(char)
         counter[char] = (counter[char]) + 1
+        binding.irb
         if counter[char] > most_common_count
           most_common = char
-          most_common_count += counter[char]
-          binding.irb
+          most_common_count = counter[char]
         end
       end
       return [most_common_count, most_common]
     end
-  
     private
   
     def is_letter?(letter)
